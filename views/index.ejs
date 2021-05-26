@@ -1,0 +1,30 @@
+<%- include('partials/header'); -%>
+
+    <h1>Choice App</h1>
+    <div class="jumbotron">
+        <a href="/login"  class="btn btn-primary btn-outline-light"  >Login as Faculty</a>
+        <h1>Select Range</h1>
+        <form action="/range" method="POST">
+            <div class="form-group">
+                <label for="selectRange">Select Max Question Range (min = 1)</label>
+                <select class="form-control" id="selectRange" name="selectRange">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                <br>
+                <button class="btn btn-primary btn-outline-light" type="submit" value="submit">Submit</button>
+            </div>
+        </form>
+
+        <div class="jumbtron">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <%- include('partials/footer'); -%> -->

@@ -1,0 +1,27 @@
+<%- include('partials/header'); -%>
+  <div class="container">
+    <form action="/login" method="POST">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form1Example1">Email address</label>
+        <input type="email" name="email" id="email" class="form-control" />
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control" />
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" value="submit" class="btn btn-primary btn-block">Sign in</button>
+    </form>
+
+    <div class="card">
+      <div class="card-body">
+        Hi, Email = <%= email %> and Password = <%= password %>.
+      </div>
+    </div>
+  </div>
+
+  <!-- <%- include('partials/footer'); -%> -->

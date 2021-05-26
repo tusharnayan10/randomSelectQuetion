@@ -1,0 +1,85 @@
+<%- include('partials/header'); -%>
+    <h1> Lab Exam 2021 </h1>
+    <p>Get random question from Experiment No: 1 to <%= max %>
+    </p>
+    <div class="jumbotron">
+        <div class="row">
+            <p> Please fill the form below:
+            </p>
+            <form action="/student" method="POST">
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="name" class="form-control" name="name" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Section</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="section" id="sectionA" value="A">
+                                <label class="form-check-label" for="sectionA">
+                                    Section A
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="section" id="sectionB" value="B">
+                                <label class="form-check-label" for="section">
+                                    Section B
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" value="submit" id="btn" class="btn btn-primary">Pick Question</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="alert alert-success" role="alert">
+                <p class="mb-0">Good Luck</p>
+                <h3 class="alert-heading"><%= msg0 %>.</h3>
+                <p> <%= msg1 %> </p>
+                <hr>
+                <p class="mb-0"> <%= msg2 %> </p>
+              </div>
+
+            <div class="jumbotron">
+                <% questions.forEach(function(question){ %>
+                    <div class="row">
+                        <h3> <b>
+                                <%= question.title %>
+                            </b></h3>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <p>
+                            <%= question.content %>
+                        </p>
+                    </div>
+
+                    <% }); %>
+
+            </div>
+
+            <script>
+                function disableButton() {
+                    document.getElementById('btn').disabled = true;
+                    // btn.disabled = true;
+                    // btn.innerText = 'Posting...'
+                    // onclick='this.disabled = true;'
+                }
+
+            </script>
+
+
+<!-- <%- include('partials/footer'); -%> -->

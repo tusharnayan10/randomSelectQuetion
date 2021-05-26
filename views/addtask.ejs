@@ -1,0 +1,33 @@
+<%- include('partials/header'); -%>
+<h1>Task</h1>
+<form action="/addtask" method="POST">
+    <div class="form-group">
+        <label for="Title">Experiment No:</label>
+        <input class="form-control" type="text" name="taskTitle">
+        <label for="Post">Experiment Name:</label>
+        <textarea class="form-control" name="taskBody" rows="5" cols="30"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit"> Add </button>
+</form>
+<div class="jumbotron">
+<h3>Experiment List</h3>
+        <form>
+
+        </form>
+        <% questions.forEach(function(question){ %>
+            <form class="item" action="/delete" method="POST">
+                <div class="item">
+                    <label for="Delete">Delete</label>
+                <input type="checkbox" name="checkbox" value="<%=question.title%>" onchange="this.form.submit()">
+                <p><%= question.title %> </p>
+                <p> 
+                    <%= question.content %>
+                </p>
+            </div>
+            </form>
+            
+            <% }); %>
+        
+    </div>
+    
+<!-- <%- include('partials/footer'); -%> -->
